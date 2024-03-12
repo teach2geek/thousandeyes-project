@@ -33,10 +33,13 @@ RUN apt-get update && \
 COPY --from=builder /usr/local/lib/python3.*/dist-packages /usr/local/lib/python3.8/dist-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
 
-# Create a non-privileged user
+# Create a non-privileged user with a home directory
 ARG UID=10000
-RUN adduser --disabled-password --gecos "" --home "/nonexistent" --shell "/sbin/nologin" --no-create-home --uid "${UID}" teappuser
+RUN mkdir -p /home/teappuser && \
+    adduser --disabled-password --gecos "" --home /home/teappuser --shell "/sbin/nologin" --no-create-home --uid "${UID}" teappuser && \
+    chown -R teappuser:teappuser /home/teappuser
 USER teappuser
+
 
 # Copy the rest of your application's code into the container
 COPY . .
