@@ -17,4 +17,4 @@ offered simply for your consideration:
 - Can you produce a container that can be seamlessly upgraded, re-deployed?
 - Does any api or web interface properly escape any untrusted input?
 - Can you build modern security header controls into your application?
-- Can this workload be easily deployed to minikube, EKS, etc? -->
+- Can this workload be easily deployed to minikube, EKS, etc?
