@@ -4,7 +4,7 @@
 [teapp](/teapp.py) is containerized using Docker, allowing it to be redeployed easily.
 
 
-Given the following scenerio, [teapp](/teapp.py) was created:
+[teapp](/teapp.py) was created given the following scenerio:
 
 Using any available online resources to build a containerized application . The application
 should make API calls to the [ThousandEyes application](https://developer.thousandeyes.com/v5/) and 
